@@ -1,0 +1,115 @@
+:root{
+    --mainColor: #ED7D31;
+    --secondaryColor: #FFC000;
+    --textColorBlack: #000;
+    --textColorWhite : #fff;
+}
+
+aside{
+    background-color: #000;
+    width: 10%;
+    height: 100%;
+}
+
+.main-menu > ul > li > a > i {
+    position: relative;
+    display: table-cell;
+    width: 60px;
+    height: 36px;
+    text-align: center;
+    vertical-align: middle;
+    font-size:30px;
+}
+
+.main-menu:hover,nav.main-menu.expanded {
+    width:230px;
+    overflow:visible;
+}
+
+.main-menu {
+    background: var(--secondaryColor);
+    border-right:2px solid var(--mainColor);
+    /* position: absolute; */
+    overflow:hidden;
+    height: 100%;
+    width:60px;
+    transition:width .05s linear;
+    z-index:1000;
+}
+
+.main-menu > ul {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.main-menu li {
+position:relative;
+display:block;
+width:250px;
+}
+
+.main-menu li > a {
+position:relative;
+display:table;
+border-collapse:collapse;
+border-spacing:0;
+color: var(--textColorBlack);
+font-size: 14px;
+text-decoration:none;
+transition:all .1s linear;
+  
+}
+
+.main-menu .nav-icon {
+position:relative;
+display:table-cell;
+width:60px;
+height:36px;
+text-align:center;
+vertical-align:middle;
+font-size:18px;
+}
+
+.main-menu .nav-text {
+position:relative;
+display:table-cell;
+vertical-align:middle;
+width:190px;
+}
+
+.no-touch .scrollable.hover {
+overflow-y:hidden;
+}
+
+.no-touch .scrollable.hover:hover {
+overflow-y:auto;
+overflow:visible;
+}
+
+a:hover,a:focus {
+text-decoration:none;
+}
+
+nav {
+user-select:none;
+}
+
+nav ul,nav li {
+outline:0;
+margin:0;
+padding:0;
+}
+.main-menu li:hover > a /* insert here for sub menu*/{
+color: var(--textColorWhite);
+background-color: var(--mainColor);
+}
+
+/* 
+ need to insert this if we do a sub menu
+,nav.main-menu li.active>a,
+.dropdown-menu>li>a:hover,.dropdown-menu>li>a:focus,
+.dropdown-menu>.active>a,.dropdown-menu>.active>a:hover,
+.dropdown-menu>.active>a:focus,.no-touch .dashboard-page nav.dashboard-menu ul li:hover a,
+.dashboard-page nav.dashboard-menu ul li.active a */

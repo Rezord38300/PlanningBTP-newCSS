@@ -1,0 +1,1285 @@
+:root{
+    --mainColor: #ED7D31;
+    --transparentMainColor: rgba(237, 125, 49 , 0.7);
+
+    --secondaryColor: #FFC000;
+    --transparentSecondaryColor: rgba(255, 192, 0 , 0.5);
+
+    --shadowColor: rgba(0 , 0 , 0 , 0.5);
+    --textColorBlack: #000;
+    --textColorWhite : #fff;
+}
+
+/******************************
+*
+    Style for page 
+*
+*****************************/
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Georgia;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.layout{
+    display: grid;
+    grid-template-columns: repeat(12 , 1fr);
+    grid-auto-rows: 1fr;
+}
+
+/******************************
+*
+    Style for login page
+*
+*****************************/
+
+.logBody{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+}
+
+.logMain{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondaryColor);
+    width: 100%;
+    height: 100%;
+}
+
+.logForm{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10%;
+    padding-top: 1%;
+    background-color: var(--mainColor);
+    border-radius: 50px;
+    box-shadow: 1px 1px 10px var(--textColorBlack);
+    width: 40%;
+    height: 55%;
+}
+
+.logForm form{
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50% , -60%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10%;
+    width: 80%;
+    height: 80%;
+}
+
+.logForm form p{
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    gap: 2px;
+    width: 50%;
+    font-size: 1.2em;
+}
+
+
+.logForm form p span{
+    display: flex;
+    gap: 1%;
+}
+
+.logForm form p span a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 320px;
+    text-decoration: none;
+    color: var(--textColorBlack);
+    align-self: center;
+    background-color: var(--secondaryColor);
+    border-radius: 50px;
+    width: 40px;
+    height: 40px;
+}
+
+.logForm form p span a:hover{
+    transform: scale(1.1);
+}
+
+.logForm form p span i{
+    align-self: center;
+    font-size: 1.2em;
+}
+
+.logForm .inputLog{
+    border: 0px solid;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+}
+
+.logForm .inputLog:focus{
+    outline: none;
+    caret-color: var(--mainColor);
+}
+
+.logForm form .userName{
+    position: absolute;
+    top: 100px;
+}
+
+.logForm form .passWord{
+    position: absolute;
+    top: 200px;
+}
+
+
+.logForm input[type = "submit"]{
+    position: absolute;
+    bottom: 20%;
+    align-self: center;
+    border:  1px solid var(--textColorBlack);
+    border-radius: 50px;
+    cursor: pointer;
+    width: 200px;
+    height: 35px;
+}
+
+.logForm input[type = "submit"]:hover{
+    transform: scale(1.1);
+}
+
+.logForm input[type = "reset"]{
+    position: absolute;
+    bottom: 10%;
+    align-self: center;
+    border:  1px solid var(--textColorBlack);
+    border-radius: 50px;
+    cursor: pointer;
+    width: 200px;
+    height: 35px;
+}
+
+.logForm input[type = "reset"]:hover{
+    transform: scale(1.1);
+}
+
+/******************************
+*
+    Style for header 
+*
+*****************************/
+
+header{
+    display: grid;
+    grid-template-columns: repeat(5 , 1fr);
+    grid-column: span 12;
+    grid-row: 1;
+    background-color: var(--mainColor);
+    padding: 10px;
+}
+
+header h1{
+    grid-column: 3;
+    align-self: center;
+    justify-self: center;
+}
+
+.profilZone{
+    position: relative;
+    grid-column: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#profilButton{
+    border-radius: 10px;
+    transition: 0.5s;
+    width: 65px;
+    height: 65px;
+}
+
+#profilButton img{
+    border-radius: 10px;
+    transition: 0.5s;
+    width: 65px;
+    height: 65px;
+}
+
+#profilButton:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+#profilButton:focus img{
+    transform: scale(1.1);
+    border-radius: 50px;
+    transition: 1.2s;
+}
+
+.profilMenu{
+    position: absolute;
+    top: 165%;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 8%;
+    border-radius: 20px;
+    background-color: var(--transparentMainColor);
+    box-shadow: 0 4px 30px rgba(0 , 0 , 0 , 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--transparentSecondaryColor);
+    transition: 0.5s;
+    opacity: 0;
+    width: 210px;
+    height: 150px;
+}
+
+.profilMenu form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid var(--textColorBlack);
+    width: 90%;
+}
+
+.profilMenu form label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    margin-top: 8%;
+    background-color: var(--secondaryColor);
+    border-radius: 50px;
+    padding: 10px;
+    transition: 0.3s;
+}
+
+.profilMenu form label i{
+    font-size: 1.5em;
+}
+
+.profilMenu form input{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+}
+
+.profilMenu form label:hover{
+    transition: 0.3s;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+#profilButton:focus ~ .profilMenu{
+    transition: 0.5s;
+    top: 130%;
+    opacity: 1;
+    z-index: 2;
+}
+
+/******************************
+*
+    Style for aside 
+*
+*****************************/
+
+.layout aside{
+    grid-column: 1;
+    grid-row: 3 / span 8;
+    background-color: var(--secondaryColor);
+    border-radius: 0 20px 20px 0;
+    width: 50%;
+}
+
+.layout aside .mainMenu{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.layout aside .mainMenu ul{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+}
+
+.layout aside .mainMenu ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    transition: 0.3s;
+}
+
+.layout aside .mainMenu ul li a{
+    position: absolute;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--textColorBlack);
+    width: 100%;
+    height: 8.5%;
+    transition: 0.3s;
+}
+
+.layout aside .mainMenu ul li a i{
+    font-size: 2em;
+}
+
+.layout aside .mainMenu ul li a .nav-text{
+    position: absolute;
+    font-size: 1.2em;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.layout aside .mainMenu ul li:hover a{
+    background-color: var(--mainColor);
+    width: 400px;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    border: 2px solid var(--textColorBlack);
+    z-index: 2;
+}
+
+.layout aside .mainMenu ul li:hover a .nav-text{
+    transform: translateX(120px);
+    transition: 0.3s;
+    z-index: 2;
+}
+
+/******************************
+*
+    Style for main of all page
+*
+*****************************/
+
+main{
+    grid-column: 2 / 13;
+    grid-row: 2 / span 10;
+    /* background-color: bisque; */
+    display: grid;
+    grid-template-columns: repeat(6 , 1fr);
+    grid-auto-rows: 1fr;
+}
+
+/********* select tab *********/
+
+.navTab{
+    grid-column: span 6;
+    grid-row: 1;
+    padding: 10px;
+}
+
+.navTab > ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+}
+
+.navTab > ul > .buttonTabs{
+    width: 20%;
+    height: 50%;
+}
+
+.navTab > ul > .buttonTabs > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    font-size: 1.3em;
+    background-color: var(--mainColor);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--textColorBlack);
+    transition: 0.3s;
+    width: 100%;
+    height: 100%;
+}
+
+.navTab > ul > .buttonTabs > a >i{
+    font-size: 1.5em;
+}
+
+.navTab > ul > .buttonTabs > a:hover{
+    transform: scale(1.1);
+    color: var(--mainColor);
+    background-color: var(--secondaryColor);
+    transition: 0.3s;
+}
+
+.navTab > ul > .activeTab a{
+    background-color: var(--secondaryColor);
+    color: var(--mainColor);
+}
+
+/******************************
+*
+    Style for profilView page
+*
+*****************************/
+
+.profilContent{
+    grid-column: span 6;
+    grid-row: 2 / 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* profilView , profilModify (Card format) */
+.profilView , .profilModify{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 50px;
+    gap: 4%;
+    background-color: var(--mainColor);
+    font-size: 1.2em;
+    width: 40%;
+    height: 85%;
+}
+
+/* profilView */
+.profilView img{
+    align-self: center;
+    border: 2px solid var(--secondaryColor);
+    border-radius: 50px;
+    width: 150px;
+    height: 150px;
+}
+
+/* profilView */
+
+.profilView p {
+    display: flex;
+    width: 100%;
+}
+.profilView p .label{
+    display: inline-block;
+    text-align: end;
+    padding-left: 10%;
+    width: 32%;
+}
+
+.profilView p .userInfo{
+    padding-left: 5%;
+    width: 55%;
+}
+
+.profilView a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    align-self: center;
+    background-color: var(--secondaryColor);
+    border-radius: 50px;
+    padding-left: 6%;
+    padding-right: 6%;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    text-decoration: none;
+    color: var(--textColorBlack);
+    transition: 0.3s;
+}
+
+.profilView a i{
+    font-size: 1.2em;
+}
+
+.profilView a:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+/******************************
+*
+    Style for profilModify
+*
+*****************************/
+
+.profilModify{
+    gap: 2%;
+}
+
+.profilModify .quitButton{
+    position: relative;
+    left: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondaryColor);
+    border-radius: 10px;
+    transition: 0.5s;
+    text-decoration: none;
+    color: var(--textColorBlack);
+    width: 40px;
+    height: 40px;
+}
+
+.profilModify .quitButton:hover{
+    color: var(--mainColor);
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.profilModify .userPicture{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding: 0;
+    border: 2px solid var(--secondaryColor);
+    border-radius: 50px;
+    width: 150px;
+    height: 150px;
+}
+
+.profilModify .iconAddPicture{
+    visibility: hidden;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondaryColor);
+    opacity: 0.8;
+    border-radius: 50px;
+    width: 152px;
+    height: 152px;
+    transition: 0.2s;
+}
+
+.profilModify .iconAddPicture i{
+    font-size: 3em;
+    color: var(--mainColor);
+}
+
+.profilModify .userPicture:hover .iconAddPicture{
+    visibility: visible;
+    animation: hoverIcon 0.5s;
+}
+
+@keyframes hoverIcon{
+    0%{
+        transform: scale(1);
+    }
+    50%{
+        transform: scale(1.1);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+
+.profilModify .userPicture img{
+    border-radius: 50px;
+    width: 150px;
+    height: 150px;
+}
+
+.profilModify label{
+    display: flex;
+    align-items: center;
+    align-self: center;
+    gap: 5%;
+    cursor: pointer;
+    width: 90%;
+}
+
+.profilModify .Disabled{
+    cursor: not-allowed;
+}
+
+.profilModify label span{
+    display: inline-block;
+    text-align: end;
+    width: 42%;
+}
+
+.profilModify span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+}
+
+.profilModify input[type="text"] , input[type="password"]{
+    border: 0px solid;
+    border-radius: 10px;
+    padding: 10px;
+    width: 45%;
+}
+
+.profilModify input[type="text"]:focus  , input[type="password"]:focus{
+    outline: none;
+    caret-color: var(--mainColor);
+}
+
+.profilModify span input[type="submit"] , .profilModify span input[type="reset"]{
+    align-self: center;
+    border:  1px solid var(--textColorBlack);
+    border-radius: 50px;
+    cursor: pointer;
+    width: 200px;
+    height: 35px;
+}
+
+.profilModify input[type="submit"]:hover , .profilModify input[type="reset"]:hover{
+    transform: scale(1.1);
+}
+
+.profilModify input[type="file"]{
+    position: absolute;
+    left: 45%;
+    width: 10%;
+    z-index: -1;
+    visibility: hidden;
+}
+
+
+/******************************
+*
+    Style for profilViewAdmin search bar and add button
+*
+*****************************/
+
+.addButton-searchZone{
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 1%;
+    width: 100%;
+}
+
+.addButton-searchZone .addEmployeeButton{
+    position: relative;
+    right: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mainColor);
+    text-decoration: none;
+    color: var(--textColorBlack);
+    font-size: 1.5em;
+    border-radius: 10px;
+    transition: 0.3s;
+    width: 35px;
+    height: 35px;
+}
+
+.addButton-searchZone .addEmployeeButton:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+    color: var(--mainColor);
+    background-color: var(--secondaryColor);
+}
+
+.addButton-searchZone .searchZone{
+    position: relative;
+    right: 6%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+.addButton-searchZone .searchZone input{
+    background-color: var(--mainColor);
+    border: 0px solid;
+    border-radius: 10px;
+    padding: 10px;
+    width: 100%;
+    padding-left: 40px;
+    outline: none;
+}
+
+.addButton-searchZone .searchZone label{
+    position: absolute;
+    left: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    background-color: var(--secondaryColor);
+    border-radius: 10px;
+    transition: 0.3s;
+    width: 35px;
+    height: 35px;
+}
+
+.addButton-searchZone .searchZone input[type="search"]:hover ~ .searchEmployeeLabel{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.addButton-searchZone .searchZone input[type="search"]:focus ~ .searchEmployeeLabel{
+    color: var(--mainColor);
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+/******************************
+*
+    Style for profilViewAdmin
+*
+*****************************/
+
+.profilViewAdmin{
+    width: 90%;
+    height: 100%;
+}
+
+/******************************
+*
+    Style for profilViewAdmin Employee List
+*
+*****************************/
+.scrollTableContainer{
+    display: inline-block;
+    overflow-y: scroll;
+    width: 100%;
+    height: 80%;
+}
+
+.table{
+    display: table;
+    table-layout: fixed;
+    border-collapse: collapse;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+
+/* style of head table */
+.table thead th{
+    position: sticky;
+    top: 0;
+    padding: 1%;
+    background-color: var(--mainColor);
+    color: var(--textColorBlack);
+}
+
+/* Picture column */
+.table thead th:nth-child(1){
+    width: 10%;
+}
+
+/* SurName column */
+.table thead th:nth-child(2){
+    width: 14%;
+}
+
+/* FirstName column */
+.table thead th:nth-child(3){
+    width: 14%;
+}
+
+/* Mail column */
+.table thead th:nth-child(4){
+    width: 14%;
+}
+
+/* Phone column */
+.table thead th:nth-child(5){
+    width: 14%;
+}
+
+/* Position column */
+.table thead th:nth-child(6){
+    width: 14%;
+}
+
+/* Button column */
+.table thead th:nth-child(7){
+    width: 6%;
+}
+
+/******************************
+*
+    Style for profilViewAdmin Employee object
+*
+*****************************/
+
+.table tbody .tableCell td{
+    padding: 0.6%;
+}
+
+.table tbody .tableCell:nth-child(odd) {
+    background-color: var(--transparentMainColor);
+}
+
+.table tbody .tableCell:nth-child(even) {
+    background-color: var(--transparentSecondaryColor);
+}
+
+.table .tableCell .columnForButton a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.4em;
+    border-radius: 10px;
+    background-color: var(--mainColor);
+    color: var(--textColorBlack);
+    width: 40px;
+    height: 40px;
+}
+
+.table .tableCell .columnForButton a:hover{
+    transform: scale(1.1);
+}
+
+/******************************
+*
+    Style for planningView
+*
+*****************************/
+
+.tabContent{
+    grid-column: span 6;
+    grid-row: 2 / 10;
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.tab{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+/******************************
+*
+    Style for tool bar planning
+*
+*****************************/
+
+.tabHeader{
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    height: 10%;
+    background-color: var(--mainColor);
+}
+
+/* Right side */
+.rightSide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 37.5%;
+    height: 100%;
+}
+
+.rightSide a{
+    font-size: 1.2em;
+    text-decoration: none;
+    color: var(--textColorBlack);
+}
+
+/* arrow to go to previous or next */
+.navigationPreviousNext{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+}
+
+.navigationPreviousNext a:nth-child(n){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+    background-color: var(--secondaryColor);
+    width: 16%;
+    height: 40%;
+    transition: 0.5s;
+}
+
+.navigationPreviousNext a:nth-child(n):hover{
+    background-color: var(--transparentSecondaryColor);
+    transition: 0.5s;
+}
+
+.navigationPreviousNext a:nth-child(1){
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: 2px solid var(--textColorBlack);
+}
+
+.navigationPreviousNext a:nth-child(2){
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* button to go to different view  */
+.navigationView{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 74%;
+    height: 100%;
+}
+
+.navigationView a:nth-child(n){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3%;
+    background-color: var(--secondaryColor);
+    width: 18%;
+    height: 20%;
+}
+
+.navigationView a:nth-child(n):hover{
+    background-color: var(--transparentSecondaryColor);
+    transition: 0.5s;
+}
+
+.navigationView a:nth-child(1){
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-right: 2px solid var(--textColorBlack);
+}
+
+.navigationView a:nth-child(2) , .navigationView a:nth-child(3){
+    border-right: 2px solid var(--textColorBlack);
+}
+
+.navigationView a:nth-child(4){
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* center */
+.middle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25%;
+}
+
+/* Left side */
+.leftSide{
+    display: flex;
+    background-color: antiquewhite;
+    width: 37.5%;
+    height: 100%;
+}
+
+.zoneAddEvent{
+    position: absolute;
+    left: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mainColor);
+    width: 10%;
+    height: 100%;
+}
+
+.zoneAddEvent .buttonAddEvent{
+    position: absolute;
+}
+
+.zoneAddEvent .indicator{
+    text-align: center;
+    position: absolute;
+    display: inline;
+    width: 150px;
+    border-radius: 5px;
+    background-color: var(--secondaryColor);
+    color: var(--mainColor);
+    transition: 0.3s;
+    z-index: -1;
+}
+
+.zoneAddEvent .buttonLabel{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--mainColor);
+    color: var(--textColorBlack);
+    text-decoration: none;
+    transition: 0.3s;
+    border-radius: 50%;
+    font-size: 1.5em;
+    width: 40px;
+    height: 40px;
+}
+
+.zoneAddEvent .buttonLabel:hover{
+    background-color: var(--secondaryColor);
+    color: var(--mainColor);
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.zoneAddEvent .buttonLabel:hover ~ .indicator{
+    transform: translateY(-50px);
+    transition: 0.3s;
+}
+
+.addEvent{
+    position: absolute;
+    top: 70px;
+    border-radius: 20px;
+    background-color: var(--mainColor);
+    width: 400px;
+    height: 300px;
+    visibility: hidden;
+}
+
+.addEvent form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    gap: 5%;
+    width: 100%;
+    height: 100%;
+}
+
+.addEvent form span{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    column-gap: 5%;
+    width: 80%;
+}
+
+.addEvent form span label{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 40%;
+}
+
+.addEvent form span input{
+    width: 50%;
+}
+
+.addEvent form span select{
+    width: 50%;
+}
+
+.addEvent .validateButton{
+    position: absolute;
+    bottom: 5%;
+    align-self: center;
+    border:  1px solid var(--textColorBlack);
+    border-radius: 50px;
+    cursor: pointer;
+    width: 150px;
+    height: 35px;
+}
+
+.addEvent input[type="submit"]{
+    left: 40px;
+}
+
+.addEvent input[type="button"]{
+    right: 40px;
+}
+
+.validateButton:hover{
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.buttonAddEvent:checked ~ .buttonLabel{
+    background-color: var(--secondaryColor);
+    color: var(--mainColor);
+    transform: scale(1.1);
+    transition: 0.3s;
+}
+
+.buttonAddEvent:checked ~ .addEvent{
+    visibility: visible;
+}
+
+/******************************
+*
+    Style for Planning day view
+*
+*****************************/
+
+.calendarBodyDayView{
+    background-color: aqua;
+}
+
+.rowName{
+    width: 2%;
+    height: 200px;
+}
+
+/* .eventMorning{
+    background-color: brown;
+    height: 50%;
+}
+
+.eventAfternoon{
+    height: 50%;
+} */
+
+/******************************
+*
+    Style for Planning week view
+*
+*****************************/
+
+
+/******************************
+*
+    Style for Planning month view
+*
+*****************************/
+
+.calendarTable{
+    align-self: center;
+    justify-self: center;
+    border-collapse: collapse;
+    width: 90%;
+    height: 90%;
+}
+
+.calendarTable th{
+    height: 5%;
+}
+
+/* if month as 5 weeks */
+.calendarTable td{
+    padding: 2px;
+    vertical-align: top;
+    border: 1px solid var(--textColorBlack);
+    width: 12.85%;
+    height: 18%;
+}
+
+/* if month as 6 weeks*/
+.calendarTable6weeks td{
+    padding: 2px;
+    vertical-align: top;
+    border: 1px solid var(--textColorBlack);
+    width: 12.85%;
+    height: 15%;
+}
+
+/* if the day isn't in the current month*/
+.calendarOtherMonth{
+    opacity: 0.3;
+}
+
+/******************************
+*
+    Style for calendarBox and Events
+*
+*****************************/
+
+.eventContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    height: 90%;
+}
+
+.calendarDayNumber{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    width: 25px;
+    height: 25px;
+}
+
+.colorCurrentDay{
+    background-color: #ED7D31;
+}
+
+.eventContainer .calendarEvent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    width: 95%;
+    background-color: aqua;
+}
+
+/******************************
+*
+    Style for Form addEvent
+*
+*****************************/
+
+.addEvent{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: red;
+    width: 100wh;
+    height: 100vh;
+}
+
+.addEvent form{
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.addEvent span{
+    background-color: antiquewhite;
+    width: 100%;
+}
+
+.addEvent form .employeeSelected{
+    background-color: brown;
+    width: 90%;
+    height: auto;
+}
+
+.addEvent form .employeeSelected{
+    background-color: brown;
+    width: 90%;
+    height: auto;
+}
+
+.addEvent form .vehicleSelected{
+    background-color: brown;
+    width: 90%;
+    height: auto;
+}

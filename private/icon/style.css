@@ -1,0 +1,126 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?r5kdbh');
+  src:  url('fonts/icomoon.eot?r5kdbh#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?r5kdbh') format('truetype'),
+    url('fonts/icomoon.woff?r5kdbh') format('woff'),
+    url('fonts/icomoon.svg?r5kdbh#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-calendar-minus-alt:before {
+  content: "\e91f";
+}
+.icon-clipboard-edit:before {
+  content: "\e91b";
+}
+.icon-clipboard-plus:before {
+  content: "\e91c";
+}
+.icon-clipboard-search:before {
+  content: "\e91d";
+}
+.icon-clipboard-times:before {
+  content: "\e91e";
+}
+.icon-angle-left:before {
+  content: "\e904";
+}
+.icon-angle-right:before {
+  content: "\e908";
+}
+.icon-at:before {
+  content: "\e90b";
+}
+.icon-briefcase:before {
+  content: "\e91a";
+}
+.icon-calendar:before {
+  content: "\e901";
+}
+.icon-calendar-plus-alt:before {
+  content: "\e902";
+}
+.icon-calendar-times-alt:before {
+  content: "\e903";
+}
+.icon-clipboard-list:before {
+  content: "\e919";
+}
+.icon-clock:before {
+  content: "\e906";
+}
+.icon-euro:before {
+  content: "\e917";
+}
+.icon-eye:before {
+  content: "\e907";
+}
+.icon-eye-slash:before {
+  content: "\e90a";
+}
+.icon-home:before {
+  content: "\e90e";
+}
+.icon-id-card:before {
+  content: "\e916";
+}
+.icon-image-plus:before {
+  content: "\e90d";
+}
+.icon-lock:before {
+  content: "\e909";
+}
+.icon-phone:before {
+  content: "\e90c";
+}
+.icon-power-off:before {
+  content: "\e905";
+}
+.icon-rotate:before {
+  content: "\e97c";
+}
+.icon-scanner:before {
+  content: "\e915";
+}
+.icon-tool:before {
+  content: "\e918";
+}
+.icon-user:before {
+  content: "\e910";
+}
+.icon-user-edit:before {
+  content: "\e900";
+}
+.icon-user-plus-bottom:before {
+  content: "\e911";
+}
+.icon-user-search:before {
+  content: "\e912";
+}
+.icon-user-times-bottom:before {
+  content: "\e914";
+}
+.icon-users-group:before {
+  content: "\e913";
+}
+.icon-warehouse:before {
+  content: "\e90f";
+}
